@@ -45,5 +45,42 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    // CMS Entry Point. The CMS Application can now start
+    cmsGo: function() {
+
+      alert('starting the app');
+        
+      // Whenever the landingPage is clicked, the game page must show
+      app.bindLandingPageClick();
+
+      // Whenever the enter button is clicked
+      app.bindEnterButtonClick();
+
+      // Whenever the "restart" buttone is clicked
+      app.bindRestartButton();
+
+      // Fade in the landing pager
+      $('#landingPage.appPage').fadeIn();
+
+    },
+    // Function to bind the landingPageClick
+    bindLandingPageClick: function() {
+        $('#landingPage').click(function() {
+            app.changeAppPage('gamePage');
+        });
+    },
+    bindEnterButtonClick: function() {
+        $('#enterButton').click(function() {
+            app.changeAppPage('entryPage');
+        });
+    },
+    bindRestartButton: function() {
+        $('.restartAppButton').click(function() {
+            app.changeAppPage('landingPage');
+        });
+    },
+    changeAppPage: function(toPage) {
+       $('.appPage:visible').fadeOut('fast', function(){ $('#' + toPage).fadeIn()});
     }
 };

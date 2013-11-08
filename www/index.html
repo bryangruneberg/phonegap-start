@@ -27,17 +27,27 @@
     </head>
     <body>
         <div class="app">
-            <h1>Perceptum Thought Squad</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+            <div id="landingPage" class="appPage" style="display: none;">
+               This is the landing page. 
+            </div>
+            <div id="gamePage" class="appPage" style="display: none;">
+               This is the game page. 
+               <br>
+               <div id="enterButton">Click here to enter the PROMO.</div>
+            </div>
+            <div id="entryPage" class="appPage" style="display: none;">
+               This is the entry page. 
+               <br>
+               <div class="restartAppButton">Click here to restart the app.</div>
             </div>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript">
+	  $(function() {
             app.initialize();
+	  });
         </script>
     </body>
 </html>
