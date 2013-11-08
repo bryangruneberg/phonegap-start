@@ -37,13 +37,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-	if(id=="deviceready") { app.cmsGo(); }
+	if(id=="deviceready") { app.ptsGo(); }
     },
     // CMS Entry Point. The CMS Application can now start
-    cmsGo: function() {
-
-      alert('starting the app');
-        
+    ptsGo: function() {
       // Whenever the landingPage is clicked, the game page must show
       app.bindLandingPageClick();
 
@@ -55,7 +52,6 @@ var app = {
 
       // Fade in the landing pager
       $('#landingPage.appPage').fadeIn();
-
     },
     // Function to bind the landingPageClick
     bindLandingPageClick: function() {
